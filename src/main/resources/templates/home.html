@@ -1,0 +1,17 @@
+<html>
+<head><title>Home Page</title></head>
+<body>
+
+<h1 th:text="${appName}">INTER GALAXY TRANSLATOR</h1>
+
+<form th:action="@{/translate}" method="post">
+    <textarea class="form-control" rows="12"
+              style="margin-top: 10px;"  placeholder="Sonstige Bemerkungen"
+              name="notes" th:inline="text">[[${notes}]]
+</textarea>
+    <input name="submit" type="submit" value="submit"/>
+    <input name="clear" type="submit" value="clear"/>
+</form>
+<p>Translated to <br> <span th:utext="${translated}">Our App</span></p>
+</body>
+</html>
